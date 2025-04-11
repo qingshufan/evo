@@ -304,21 +304,21 @@ def prepare_axis(fig: Figure, plot_mode: PlotMode = PlotMode.xy,
     else:
         ax = fig.add_subplot(subplot_arg)
     if plot_mode in {PlotMode.xy, PlotMode.xz, PlotMode.xyz}:
-        xlabel = f"$x$ ({length_unit.value})"
+        xlabel = f"$x$ [{length_unit.value}]"
     elif plot_mode in {PlotMode.yz, PlotMode.yx}:
-        xlabel = f"$y$ ({length_unit.value})"
+        xlabel = f"$y$ [{length_unit.value}]"
     else:
-        xlabel = f"$z$ ({length_unit.value})"
+        xlabel = f"$z$ [{length_unit.value}]"
     if plot_mode in {PlotMode.xy, PlotMode.zy, PlotMode.xyz}:
-        ylabel = f"$y$ ({length_unit.value})"
+        ylabel = f"$y$ [{length_unit.value}]"
     elif plot_mode in {PlotMode.zx, PlotMode.yx}:
-        ylabel = f"$x$ ({length_unit.value})"
+        ylabel = f"$x$ [{length_unit.value}]"
     else:
-        ylabel = f"$z$ ({length_unit.value})"
+        ylabel = f"$z$ [{length_unit.value}]"
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
     if plot_mode == PlotMode.xyz and isinstance(ax, Axes3D):
-        ax.set_zlabel(f'$z$ ({length_unit.value})')
+        ax.set_zlabel(f'$z$ [{length_unit.value}]')
     if SETTINGS.plot_invert_xaxis:
         plt.gca().invert_xaxis()
     if SETTINGS.plot_invert_yaxis:

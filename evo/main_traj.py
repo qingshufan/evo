@@ -437,8 +437,8 @@ def run(args):
         # plot_collection.add_figure("rpy", fig_rpy)
         # if fig_speed:
             # plot_collection.add_figure("speeds", fig_speed)
-        if args.plot:
-            plot_collection.show()
+        # if args.plot:
+            # plot_collection.show()
         if args.save_plot:
             logger.info(SEP)
             plot_collection.export(args.save_plot,
