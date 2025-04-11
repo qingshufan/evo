@@ -1,0 +1,1 @@
+mv settings.json ~/.evo/

@@ -331,6 +331,7 @@ def run(args):
 
             short_traj_name = to_compact_name(args.ref, args,
                                               SETTINGS.plot_usetex)
+            short_traj_name = "ground truth"
             plot.traj(ax_traj, plot_mode, ref_traj,
                       style=SETTINGS.plot_reference_linestyle,
                       color=SETTINGS.plot_reference_color,
@@ -387,6 +388,7 @@ def run(args):
                 color = next(cmap_colors)
 
             short_traj_name = to_compact_name(name, args, SETTINGS.plot_usetex)
+            short_traj_name = "estimated"
             plot.traj(ax_traj, plot_mode, traj,
                       SETTINGS.plot_trajectory_linestyle, color,
                       short_traj_name, alpha=SETTINGS.plot_trajectory_alpha,
@@ -398,6 +400,7 @@ def run(args):
                     ax_traj, traj, synced_refs[name], plot_mode, color=color,
                     style=SETTINGS.plot_pose_correspondences_linestyle,
                     alpha=SETTINGS.plot_trajectory_alpha)
+
             plot.traj_xyz(axarr_xyz, traj, SETTINGS.plot_trajectory_linestyle,
                           color, short_traj_name,
                           alpha=SETTINGS.plot_trajectory_alpha,
@@ -430,10 +433,10 @@ def run(args):
             plot.ros_map(ax_traj, args.ros_map_yaml, plot_mode)
 
         plot_collection.add_figure("trajectories", fig_traj)
-        plot_collection.add_figure("xyz", fig_xyz)
-        plot_collection.add_figure("rpy", fig_rpy)
-        if fig_speed:
-            plot_collection.add_figure("speeds", fig_speed)
+        # plot_collection.add_figure("xyz", fig_xyz)
+        # plot_collection.add_figure("rpy", fig_rpy)
+        # if fig_speed:
+            # plot_collection.add_figure("speeds", fig_speed)
         if args.plot:
             plot_collection.show()
         if args.save_plot:

@@ -561,10 +561,13 @@ def draw_correspondence_edges(ax: Axes, traj_1: trajectory.PosePath3D,
     interweaved_positions = np.empty((n * 2, 3))
     interweaved_positions[0::2, :] = traj_1.positions_xyz
     interweaved_positions[1::2, :] = traj_2.positions_xyz
+    color="red"
     colors = np.array(n * [color])
     markers = colored_line_collection(interweaved_positions, colors, plot_mode,
                                       step=2, alpha=alpha, linestyles=style)
+    markers.set_label("difference")
     ax.add_collection(markers)
+    ax.legend(frameon=True)
 
 
 def traj_xyz(axarr: np.ndarray, traj: trajectory.PosePath3D, style: str = '-',
