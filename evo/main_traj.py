@@ -320,7 +320,6 @@ def run(args):
         length_unit = Unit(SETTINGS.plot_trajectory_length_unit)
         ax_traj = plot.prepare_axis(fig_traj, plot_mode,
                                     length_unit=length_unit)
-
         # for x-axis alignment starting from 0 with --plot_relative_time
         start_time = None
 
@@ -431,7 +430,7 @@ def run(args):
             plot.map_tile(ax_traj, crs=args.map_tile)
         if args.ros_map_yaml:
             plot.ros_map(ax_traj, args.ros_map_yaml, plot_mode)
-
+            
         plot_collection.add_figure("trajectories", fig_traj)
         # plot_collection.add_figure("xyz", fig_xyz)
         # plot_collection.add_figure("rpy", fig_rpy)

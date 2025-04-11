@@ -1,1 +1,1 @@
-mv settings.json ~/.evo/
+cp -r settings.json ~/.evo/
